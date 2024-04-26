@@ -51,9 +51,9 @@ export const Form = () => {
                         </select>
                     </label>
                 </p>
-                <p className="form__paragraph--anazer" result={result}>
 
-                </p>
+                <Result result={result} />
+
                 <p>
                     <button className="form__button">Przelicz dla mnie</button>
                     <button type="reset" className="form__button--special">wyczyść kwotę</button>
