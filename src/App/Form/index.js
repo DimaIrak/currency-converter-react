@@ -31,7 +31,7 @@ export const Form = () => {
                     <label className="form__label">
                         <span className="form__labelText">Tyle mam PLN*:</span>
                         <input value={amount} onChange={({ target }) => setAmount(target.value)} type="number" required step="1" className="form__field" placeholder="wpisz kwotę" name="enteredAmount"
-                            autofocus />
+                        />
                     </label>
                 </p>
                 <p>
@@ -51,7 +51,7 @@ export const Form = () => {
                         </select>
                     </label>
                 </p>
-                <p className="form__paragraph--anazer" Result result={result}>
+                <p className="form__paragraph--anazer" result={result}>
 
                 </p>
                 <p>
