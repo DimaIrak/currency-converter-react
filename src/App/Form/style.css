@@ -92,3 +92,11 @@
     padding-left: 13px;
     font-size: 30px;
 }
+
+.container {
+    max-width: 500px;
+    padding: 28px 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
