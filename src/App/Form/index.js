@@ -13,7 +13,7 @@ export const Form = () => {
 
         setResult({
             enteredAmount: +amount,
-            calculateAmount: amount / rate,
+            calculatedAmount: amount / rate,
             currency,
         });
     };
