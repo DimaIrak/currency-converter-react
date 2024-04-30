@@ -18,6 +18,11 @@ export const Form = () => {
         });
     };
 
+    const onFormReset = (event) => {
+        event.preventDefault();
+        setAmount("");
+    };
+
     const onFormSubmit = (event) => {
         event.preventDefault();
         calculateResult(currency, amount);
@@ -25,7 +30,7 @@ export const Form = () => {
 
     return (
         <div className="container">
-            <form className="form" onSubmit={onFormSubmit}>
+            <form className="form" onSubmit={onFormSubmit} onReset={onFormReset}>
                 <fieldset className="form__fieldset">
                     <legend className="form__legend">Kantor złotóweczka</legend>
                     <p className="form__paragraph">
