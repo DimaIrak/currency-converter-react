@@ -53,7 +53,7 @@
 }
 
 .form__button {
-    cursor: pointer;
+    margin-left: 11px;
     width: 60%;
     max-width: 250px;
     padding: 5px;
@@ -67,7 +67,7 @@
 }
 
 .form__button--special {
-    cursor: pointer;
+    margin-left: 11px;
     margin-top: 7px;
     padding: 5px;
     padding-left: 10px;
