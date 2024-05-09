@@ -62,7 +62,7 @@ export const Form = () => {
 
                     <p>
                         <button className="form__button">Przelicz dla mnie</button>
-                        <button type="reset" className="form__button--special">wyczyść kwotę</button>
+                        <button type="reset" className="form__button--special">Wyczyść kwotę</button>
                     </p>
                     <p className="form__footer">
                         *Pole obowiązkowe do wypełnienia
