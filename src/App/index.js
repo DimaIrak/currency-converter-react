@@ -1,8 +1,5 @@
 import { Form } from "./Form";
 import "./app.css";
-import { hello } from "./Utils/hello";
-
-hello();
 
 function App() {
     return (
