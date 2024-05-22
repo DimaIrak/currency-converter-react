@@ -1,5 +1,8 @@
 .clock {
     text-align: right;
     font-family: monospace;
-    color: crimson;
+    color: #033ff9;
+    background-color: #ccc;
+    padding-top: 15px;
+    padding-right: 15px;
 }
