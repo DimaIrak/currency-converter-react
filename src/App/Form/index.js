@@ -35,7 +35,7 @@ export const Form = () => {
                 <p className="form__paragraph">
                     <label className="form__label">
                         <span className="form__labelText">Tyle mam PLN*:</span>
-                        <input value={amount} onChange={({ target }) => setAmount(target.value)} type="number" required step="1" className="form__field" placeholder="wpisz kwotę" name="enteredAmount"
+                        <input value={amount} onChange={({ target }) => setAmount(target.value)} type="number" required step="1" min="1" className="form__field" placeholder="wpisz kwotę" name="enteredAmount"
                         />
                     </label>
                 </p>
