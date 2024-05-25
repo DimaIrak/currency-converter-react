@@ -7,7 +7,8 @@ export const Result = ({ result }) => (
                 Wezmę&nbsp;:
                 {" "}
                 <strong>
-                    {result.calculatedAmount.toFixed(2)}&nbsp;{result.currency}
+                    {result.calculatedAmount.toFixed(2)}&nbsp;
+                    {" "}{result.currency}
                 </strong>
             </>
         )}
