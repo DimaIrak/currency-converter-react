@@ -3,10 +3,6 @@
     padding: 10px 20px 20px 20px;
 }
 
-.form__label {
-    margin: 0px auto;
-}
-
 .form__field {
     padding: 13px;
     border: 3px solid;
@@ -14,17 +10,6 @@
     border-radius: 50px;
     width: 200px;
     margin: 20px 0;
-}
-
-.form__field:focus {
-    color: blueviolet;
-}
-
-.form__paragraph--anazer {
-    text-align: center;
-    color: rgb(1, 185, 124);
-    font-size: 45px;
-
 }
 
 .form__footer {
@@ -86,17 +71,4 @@
     border-bottom-right-radius: 20px;
     border-color: blueviolet;
     padding: 40px 20px;
-}
-
-.form__strong {
-    padding-left: 13px;
-    font-size: 30px;
-}
-
-.container {
-    max-width: 500px;
-    padding: 28px 20px;
-    margin: auto;
-    
-    
 }

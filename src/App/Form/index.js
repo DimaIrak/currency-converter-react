@@ -33,7 +33,7 @@ export const Form = () => {
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kantor złotóweczka</legend>
                 <p className="form__paragraph">
-                    <label className="form__label">
+                    <label>
                         <span className="form__labelText">Tyle mam PLN*:</span>
                         <input value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" className="form__field" placeholder="wpisz kwotę" name="enteredAmount"
                         />
