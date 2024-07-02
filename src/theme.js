@@ -2,7 +2,7 @@ export const theme = {
     colors: {
         veryLightGray: "#ccc",
         blueRbbon: "#033ff9",
-        darkCyan: "rgb(o, 139, 139)",
+        darkCyan: "rgb(0, 139, 139)",
         blueViolet: "rgb(138, 43, 226)",
         jade: "rgb(1, 185, 124)",
         crimson: "rgb(220, 20, 60)",
