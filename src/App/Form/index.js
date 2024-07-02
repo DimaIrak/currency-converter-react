@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
-import "./style.css";
 import {
     StyledForm,
     Field,
+    Fildset,
+    Legend,
+    LabelText,
+    Footer,
+    CountButton,
+    CleanButton,
 } from "./styled"
 
 export const Form = () => {
@@ -34,19 +39,19 @@ export const Form = () => {
 
     return (
         <StyledForm onSubmit={onFormSubmit} onReset={onFormReset}>
-            <fieldset className="form__fieldset">
-                <legend className="form__legend">Kantor złotóweczka</legend>
+            <Fildset>
+                <Legend>Kantor złotóweczka</Legend>
                 <p className="form__paragraph">
                     <label>
-                        <span className="form__labelText">Tyle mam PLN*:</span>
+                        <LabelText>Tyle mam PLN*:</LabelText>
                         <Field value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
                     </label>
                 </p>
                 <p>
                     <label>
-                        <span className="form__labelText">
+                        <LabelText>
                             Wybierz waluta:
-                        </span>
+                        </LabelText>
                         <Field as="select" value={currency} onChange={({ target }) => setCurrency(target.value)} required name="selectedCurrency">
                             {currencies.map((currency => (
                                 <option
@@ -63,13 +68,13 @@ export const Form = () => {
                 <Result result={result} />
 
                 <p>
-                    <button className="form__button">Przelicz dla mnie</button>
-                    <button type="reset" className="form__button--special">Wyczyść kwotę</button>
+                    <CountButton>Przelicz dla mnie</CountButton>
+                    <CleanButton type="reset">Wyczyść kwotę</CleanButton>
                 </p>
-                <p className="form__footer">
+                <Footer>
                     *Pole obowiązkowe do wypełnienia
-                </p>
-            </fieldset>
+                </Footer>
+            </Fildset>
         </StyledForm>
     );
 };
