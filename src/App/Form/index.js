@@ -47,7 +47,7 @@ export const Form = () => {
                         <span className="form__labelText">
                             Wybierz waluta:
                         </span>
-                        <Field value={currency} onChange={({ target }) => setCurrency(target.value)} required name="selectedCurrency">
+                        <Field as="select" value={currency} onChange={({ target }) => setCurrency(target.value)} required name="selectedCurrency">
                             {currencies.map((currency => (
                                 <option
                                     key={currency.short}
