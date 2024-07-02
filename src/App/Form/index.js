@@ -2,6 +2,10 @@ import { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
 import "./style.css";
+import {
+    StyledForm,
+    Field,
+} from "./styled"
 
 export const Form = () => {
     const [currency, setCurrency] = useState(currencies[0].short);
@@ -29,14 +33,13 @@ export const Form = () => {
     };
 
     return (
-        <form className="form" onSubmit={onFormSubmit} onReset={onFormReset}>
+        <StyledForm onSubmit={onFormSubmit} onReset={onFormReset}>
             <fieldset className="form__fieldset">
                 <legend className="form__legend">Kantor złotóweczka</legend>
                 <p className="form__paragraph">
                     <label>
                         <span className="form__labelText">Tyle mam PLN*:</span>
-                        <input value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" className="form__field" placeholder="wpisz kwotę" name="enteredAmount"
-                        />
+                        <Field value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
                     </label>
                 </p>
                 <p>
@@ -44,7 +47,7 @@ export const Form = () => {
                         <span className="form__labelText">
                             Wybierz waluta:
                         </span>
-                        <select value={currency} onChange={({ target }) => setCurrency(target.value)} className="form__field" required name="selectedCurrency">
+                        <Field value={currency} onChange={({ target }) => setCurrency(target.value)} required name="selectedCurrency">
                             {currencies.map((currency => (
                                 <option
                                     key={currency.short}
@@ -53,7 +56,7 @@ export const Form = () => {
                                     {currency.name}
                                 </option>
                             )))}
-                        </select>
+                        </Field>
                     </label>
                 </p>
 
@@ -67,6 +70,6 @@ export const Form = () => {
                     *Pole obowiązkowe do wypełnienia
                 </p>
             </fieldset>
-        </form>
+        </StyledForm>
     );
 };
