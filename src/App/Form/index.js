@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
 import {
@@ -39,6 +39,12 @@ export const Form = () => {
         calculateResult(currency, amount);
     };
 
+    const inputRef = useRef(null);
+
+    const focusInput = () => {
+        inputRef.current.focus();
+    };
+
     return (
         <StyledForm onSubmit={onFormSubmit} onReset={onFormReset}>
             <Fildset>
@@ -46,7 +52,7 @@ export const Form = () => {
                 <p>
                     <label>
                         <LabelText>Tyle mam PLN*:</LabelText>
-                        <Field value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
+                        <Field ref={inputRef} value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
                     </label>
                 </p>
                 <p>
@@ -70,7 +76,7 @@ export const Form = () => {
                 <Result result={result} />
 
                 <p>
-                    <CountButton>Przelicz dla mnie</CountButton>
+                    <CountButton onClick={focusInput}>Przelicz dla mnie</CountButton>
                     <CleanButton onClick={onFormReset} type="reset">Wyczyść za mnie</CleanButton>
                 </p>
                 <Footer>
