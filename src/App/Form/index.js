@@ -30,6 +30,8 @@ export const Form = () => {
     const onFormReset = (event) => {
         event.preventDefault();
         setAmount("");
+        setCurrency("USD");
+        setResult(0);
     };
 
     const onFormSubmit = (event) => {
@@ -69,7 +71,7 @@ export const Form = () => {
 
                 <p>
                     <CountButton>Przelicz dla mnie</CountButton>
-                    <CleanButton type="reset">Wyczyść kwotę</CleanButton>
+                    <CleanButton onClick={onFormReset} type="reset">Wyczyść kwotę</CleanButton>
                 </p>
                 <Footer>
                     *Pole obowiązkowe do wypełnienia
