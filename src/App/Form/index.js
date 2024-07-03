@@ -41,7 +41,7 @@ export const Form = () => {
         <StyledForm onSubmit={onFormSubmit} onReset={onFormReset}>
             <Fildset>
                 <Legend>Kantor złotóweczka</Legend>
-                <p className="form__paragraph">
+                <p>
                     <label>
                         <LabelText>Tyle mam PLN*:</LabelText>
                         <Field value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
