@@ -71,7 +71,7 @@ export const Form = () => {
 
                 <p>
                     <CountButton>Przelicz dla mnie</CountButton>
-                    <CleanButton onClick={onFormReset} type="reset">Wyczyść kwotę</CleanButton>
+                    <CleanButton onClick={onFormReset} type="reset">Wyczyść za mnie</CleanButton>
                 </p>
                 <Footer>
                     *Pole obowiązkowe do wypełnienia
