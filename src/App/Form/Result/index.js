@@ -1,7 +1,7 @@
-import "./style.css";
+import { Wrapper } from "./styled";
 
 export const Result = ({ result }) => (
-    <p className="result">
+    <Wrapper>
         {!!result && (
             <>
                 Wezmę&nbsp;:
@@ -12,5 +12,5 @@ export const Result = ({ result }) => (
                 </strong>
             </>
         )}
-    </p>
+    </Wrapper>
 );
