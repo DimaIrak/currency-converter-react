@@ -11,7 +11,7 @@ export const Field = styled.input`
     color: ${({ theme }) => theme.colors.darkCyan};
     border-radius: 50px;
     width: 200px;
-    margin: 20px 0;
+    margin: 0;
 `;
 
 export const Fildset = styled.fieldset`
