@@ -74,3 +74,11 @@ export const CleanButton = styled.button`
         background-color: hsl(271, 76%, 65%);
     }
 `;
+
+export const Loading = styled.p`
+    color: ${({ theme }) => theme.colors.fadedJade};
+`;
+
+export const Failure = styled.p`
+    color: ${({ theme }) => theme.colors.crimson};
+`;
