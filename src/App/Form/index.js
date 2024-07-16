@@ -10,19 +10,24 @@ import {
     Footer,
     CountButton,
     CleanButton,
-} from "./styled"
+    Loading,
+    Failure,
+} from "./styled";
+
+import { useRatesData } from "./useRatesData";
 
 export const Form = () => {
-    const [currency, setCurrency] = useState(currencies[0].short);
+    const ratesDate = useRatesData();
+    const [currency, setCurrency] = useState("EUR");
     const [amount, setAmount] = useState("");
     const [result, setResult] = useState(0);
 
     const calculateResult = (currency, amount) => {
-        const rate = currencies.find(({ short }) => short === currency).rate;
+        const rate = ratesDate.rates[currency];
 
         setResult({
-            enteredAmount: +amount,
-            calculatedAmount: amount / rate,
+            sourceAmount: +amount,
+            targetAmount: amount * rate,
             currency,
         });
     };
@@ -49,40 +54,55 @@ export const Form = () => {
         <StyledForm onSubmit={onFormSubmit} onReset={onFormReset}>
             <Fildset>
                 <Legend>Kantor złotóweczka</Legend>
-                <p>
-                    <label>
-                        <LabelText>Tyle mam PLN*:</LabelText>
-                        <Field ref={inputRef} value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <LabelText>
-                            Wybierz waluta:
-                        </LabelText>
-                        <Field as="select" value={currency} onChange={({ target }) => setCurrency(target.value)} required name="selectedCurrency">
-                            {currencies.map((currency => (
-                                <option
-                                    key={currency.short}
-                                    value={currency.short}
-                                >
-                                    {currency.name}
-                                </option>
-                            )))}
-                        </Field>
-                    </label>
-                </p>
+                {ratesDate.state === "loading"
+                    ? (
+                        <Loading>
+                            Sekundka... <br />Ładuje kursy walut
+                        </Loading>
+                    )
+                    : (
+                        ratesDate.state === "error" ? (
+                            <Failure>
+                                Coś poszło nie tak
+                            </Failure>
+                        ) : (
+                )
+            }
 
-                <Result result={result} />
-
-                <p>
-                    <CountButton onClick={focusInput}>Przelicz dla mnie</CountButton>
-                    <CleanButton onClick={onFormReset} type="reset">Wyczyść za mnie</CleanButton>
+                        < p >
+                        <label>
+                            <LabelText>Tyle mam PLN*:</LabelText>
+                            <Field ref={inputRef} value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
+                        </label>
                 </p>
-                <Footer>
-                    *Pole obowiązkowe do wypełnienia
-                </Footer>
-            </Fildset>
-        </StyledForm>
+            <p>
+                <label>
+                    <LabelText>
+                        Wybierz waluta:
+                    </LabelText>
+                    <Field as="select" value={currency} onChange={({ target }) => setCurrency(target.value)} required name="selectedCurrency">
+                        {currencies.map((currency => (
+                            <option
+                                key={currency.short}
+                                value={currency.short}
+                            >
+                                {currency.name}
+                            </option>
+                        )))}
+                    </Field>
+                </label>
+            </p>
+
+            <Result result={result} />
+
+            <p>
+                <CountButton onClick={focusInput}>Przelicz dla mnie</CountButton>
+                <CleanButton onClick={onFormReset} type="reset">Wyczyść za mnie</CleanButton>
+            </p>
+            <Footer>
+                *Pole obowiązkowe do wypełnienia
+            </Footer>
+        </Fildset>
+        </StyledForm >
     );
 };
