@@ -65,44 +65,40 @@ export const Form = () => {
                             <Failure>
                                 Coś poszło nie tak
                             </Failure>
-                        ) : (
-                )
-            }
-
-                        < p >
-                        <label>
-                            <LabelText>Tyle mam PLN*:</LabelText>
-                            <Field ref={inputRef} value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
-                        </label>
-                </p>
-            <p>
-                <label>
-                    <LabelText>
-                        Wybierz waluta:
-                    </LabelText>
-                    <Field as="select" value={currency} onChange={({ target }) => setCurrency(target.value)} required name="selectedCurrency">
-                        {currencies.map((currency => (
-                            <option
-                                key={currency.short}
-                                value={currency.short}
-                            >
-                                {currency.name}
-                            </option>
-                        )))}
-                    </Field>
-                </label>
-            </p>
-
-            <Result result={result} />
-
-            <p>
-                <CountButton onClick={focusInput}>Przelicz dla mnie</CountButton>
-                <CleanButton onClick={onFormReset} type="reset">Wyczyść za mnie</CleanButton>
-            </p>
-            <Footer>
-                *Pole obowiązkowe do wypełnienia
-            </Footer>
-        </Fildset>
+                        ) : (<>
+                            < p >
+                                <label>
+                                    <LabelText>Tyle mam PLN*:</LabelText>
+                                    <Field ref={inputRef} value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <LabelText>
+                                        Wybierz waluta:
+                                    </LabelText>
+                                    <Field as="select" value={currency} onChange={({ target }) => setCurrency(target.value)} required name="selectedCurrency">
+                                        {currencies.map((currency => (
+                                            <option
+                                                key={currency.short}
+                                                value={currency.short}
+                                            >
+                                                {currency.name}
+                                            </option>
+                                        )))}
+                                    </Field>
+                                </label>
+                            </p>
+                            <Result result={result} />
+                            <p>
+                                <CountButton onClick={focusInput}>Przelicz dla mnie</CountButton>
+                                <CleanButton onClick={onFormReset} type="reset">Wyczyść za mnie</CleanButton>
+                            </p>
+                            <Footer>
+                                *Pole obowiązkowe do wypełnienia
+                            </Footer>
+                        </>))}
+            </Fildset>
         </StyledForm >
     );
 };
