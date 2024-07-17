@@ -8,7 +8,7 @@ export const useRatesData = () => {
     useEffect(() => {
         const fetchRates = async () => {
             try {
-                const response = await fetch("currencies.json")
+                const response = await fetch("currency-converter-react/currencies.json")
 
                 if (!response.ok) {
                     throw new Error(response.statusText);
