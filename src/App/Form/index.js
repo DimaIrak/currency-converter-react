@@ -78,12 +78,12 @@ export const Form = () => {
                                         Wybierz waluta:
                                     </LabelText>
                                     <Field as="select" value={currency} onChange={({ target }) => setCurrency(target.value)} required name="selectedCurrency">
-                                        {currencies.map((currency => (
+                                        {Object.keys(ratesDate.rates).map(((currency) => (
                                             <option
-                                                key={currency.short}
-                                                value={currency.short}
+                                                key={currency}
+                                                value={currency}
                                             >
-                                                {currency.name}
+                                                {currency}
                                             </option>
                                         )))}
                                     </Field>
