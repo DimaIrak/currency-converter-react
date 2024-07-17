@@ -34,7 +34,7 @@ export const Form = () => {
     const onFormReset = (event) => {
         event.preventDefault();
         setAmount("");
-        setCurrency("USD");
+        setCurrency("EUR");
         setResult(0);
     };
 
