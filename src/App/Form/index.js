@@ -1,5 +1,4 @@
 import { useState, useRef } from "react";
-import { currencies } from "../currencies";
 import { Result } from "./Result";
 import {
     StyledForm,
