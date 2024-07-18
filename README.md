@@ -14,7 +14,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - CSS
 - BEM
 - Grid
-- React
+- React.js
+- React Hooks
+- Custom Hooks
+- Styled-components
+- Babel
+- Webpack
+- JavaScript
+- JS Async
 
 In the project directory, you can run:
 
