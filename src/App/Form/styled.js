@@ -96,4 +96,5 @@ export const Link = styled.a`
 
 export const Info = styled.span`
     color: ${({ theme }) => theme.colors.crimson};
+    font-size: x-large;
 `;
