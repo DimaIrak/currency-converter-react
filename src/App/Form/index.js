@@ -38,6 +38,7 @@ export const Form = () => {
         setAmount("");
         setCurrency("EUR");
         setResult(0);
+        focusInput();
     };
 
     const onFormSubmit = (event) => {
@@ -60,7 +61,7 @@ export const Form = () => {
     };
 
     return (
-        <StyledForm onSubmit={onFormSubmit} onReset={onFormReset}>
+        <StyledForm onSubmit={onFormSubmit}>
             <Fildset>
                 <Legend>Kantor złotóweczka</Legend>
                 {ratesDate.state === "loading"
