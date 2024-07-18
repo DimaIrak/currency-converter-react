@@ -55,6 +55,10 @@ export const Form = () => {
         return new Date(ratesData.date).toLocaleDateString(undefined);
     };
 
+    const handleAmountChange = (value) => {
+        setAmount(value.slice(0, 8));
+    };
+
     return (
         <StyledForm onSubmit={onFormSubmit} onReset={onFormReset}>
             <Fildset>
@@ -74,7 +78,7 @@ export const Form = () => {
                             <p>
                                 <label>
                                     <LabelText>Tyle mam PLN*:</LabelText>
-                                    <Field ref={inputRef} value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
+                                    <Field ref={inputRef} value={amount} onChange={({ target }) => handleAmountChange(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
                                 </label>
                             </p>
                             <p>
