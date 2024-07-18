@@ -93,3 +93,7 @@ export const Link = styled.a`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.fadedJade};
 `;
+
+export const Info = styled.span`
+    color: ${({ theme }) => theme.colors.crimson};
+`;

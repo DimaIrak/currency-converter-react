@@ -13,6 +13,7 @@ import {
     Failure,
     ExchangeDate,
     Link,
+    Info,
 } from "./styled";
 
 import { useRatesData } from "./useRatesData";
@@ -78,7 +79,7 @@ export const Form = () => {
                         ) : (<>
                             <p>
                                 <label>
-                                    <LabelText>Tyle mam PLN*:</LabelText>
+                                    <LabelText>Tyle mam PLN<Info>*</Info>:</LabelText>
                                     <Field ref={inputRef} value={amount} onChange={({ target }) => handleAmountChange(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
                                 </label>
                             </p>
@@ -110,7 +111,7 @@ export const Form = () => {
                                 <strong>Aktualne na dzień: {getExchangeDate(ratesDate)}</strong>
                             </ExchangeDate>
                             <Footer>
-                                *Pole obowiązkowe do wypełnienia
+                                <Info>*</Info>Pole obowiązkowe do wypełnienia
                             </Footer>
                         </>))}
             </Fildset>
