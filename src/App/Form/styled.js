@@ -82,3 +82,14 @@ export const Loading = styled.p`
 export const Failure = styled.p`
     color: ${({ theme }) => theme.colors.crimson};
 `;
+
+export const ExchangeDate = styled.p`
+    text-align: center;
+    margin-top: 40px;
+    color: ${({ theme }) => theme.colors.blueViolet};
+`;
+
+export const Link = styled.a`
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.fadedJade};
+`;
