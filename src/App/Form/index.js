@@ -71,7 +71,7 @@ export const Form = () => {
                                 Coś poszło nie tak
                             </Failure>
                         ) : (<>
-                            < p >
+                            <p>
                                 <label>
                                     <LabelText>Tyle mam PLN*:</LabelText>
                                     <Field ref={inputRef} value={amount} onChange={({ target }) => setAmount(target.value)} type="number" step="1" min="1" placeholder="wpisz kwotę" name="enteredAmount" />
