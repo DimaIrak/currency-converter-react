@@ -11,6 +11,8 @@ import {
     CleanButton,
     Loading,
     Failure,
+    ExchangeDate,
+    Link,
 } from "./styled";
 
 import { useRatesData } from "./useRatesData";
@@ -47,6 +49,10 @@ export const Form = () => {
 
     const focusInput = () => {
         inputRef.current.focus();
+    };
+
+    const getExchangeDate = (ratesData) => {
+        return new Date(ratesData.date).toLocaleDateString(undefined);
     };
 
     return (
@@ -93,6 +99,11 @@ export const Form = () => {
                                 <CountButton onClick={focusInput}>Przelicz dla mnie</CountButton>
                                 <CleanButton onClick={onFormReset} type="reset">Wyczyść za mnie</CleanButton>
                             </p>
+                            <ExchangeDate>
+                                Kursy walut pobierane są z <i><Link href="https://currencyapi.com/">currencyapi.com</Link></i>
+                                <br />
+                                <strong>Aktualne na dzień: {getExchangeDate(ratesDate)}</strong>
+                            </ExchangeDate>
                             <Footer>
                                 *Pole obowiązkowe do wypełnienia
                             </Footer>
