@@ -69,14 +69,14 @@ export const Form = () => {
         <StyledForm onSubmit={onFormSubmit} onReset={onFormReset}>
             <Fildset>
                 <Legend>Kantor złotóweczka</Legend>
-                {ratesDate.state === "loading"
+                {ratesDate.status === "loading"
                     ? (
                         <Loading>
                             Sekundka... <br />Ładuje kursy walut
                         </Loading>
                     )
                     : (
-                        ratesDate.state === "error" ? (
+                        ratesDate.status === "error" ? (
                             <Failure>
                                 Coś poszło nie tak
                             </Failure>

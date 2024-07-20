@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export const useRatesData = () => {
     const API_URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_dicjdNB7adLyo9HvvTsJla2S6wny6LS6NBRbBpKM&base_currency=PLN";
     const [ratesData, setRatesData] = useState({
-        state: "loading",
+        status: "loading",
     });
 
     useEffect(() => {
@@ -17,14 +17,14 @@ export const useRatesData = () => {
                 const { data, meta } = await response.json();
 
                 setRatesData({
-                    state: "success",
+                    status: "success",
                     rates: data,
                     date: meta.last_updated_at,
                 });
 
             } catch {
                 setRatesData({
-                    state: "error",
+                    status: "error",
                 });
             }
         };
