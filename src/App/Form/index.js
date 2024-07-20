@@ -62,7 +62,7 @@ export const Form = () => {
     };
 
     return (
-        <StyledForm onSubmit={onFormSubmit}>
+        <StyledForm onSubmit={onFormSubmit} onReset={onFormReset}>
             <Fildset>
                 <Legend>Kantor złotóweczka</Legend>
                 {ratesDate.state === "loading"
@@ -103,7 +103,7 @@ export const Form = () => {
                             <Result result={result} />
                             <p>
                                 <CountButton onClick={focusInput}>Przelicz dla mnie</CountButton>
-                                <CleanButton onClick={onFormReset} type="reset">Wyczyść za mnie</CleanButton>
+                                <CleanButton  type="reset">Wyczyść za mnie</CleanButton>
                             </p>
                             <ExchangeDate>
                                 Kursy walut pobierane są z <i><Link href="https://currencyapi.com/">currencyapi.com</Link></i>
