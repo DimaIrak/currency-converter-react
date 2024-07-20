@@ -44,7 +44,11 @@ export const Form = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        calculateResult(currency, amount);
+        if (amount === "") {
+            return;
+        } else {
+            calculateResult(currency, amount);
+        }
     };
 
     const inputRef = useRef(null);
@@ -103,7 +107,7 @@ export const Form = () => {
                             <Result result={result} />
                             <p>
                                 <CountButton onClick={focusInput}>Przelicz dla mnie</CountButton>
-                                <CleanButton  type="reset">Wyczyść za mnie</CleanButton>
+                                <CleanButton type="reset">Wyczyść za mnie</CleanButton>
                             </p>
                             <ExchangeDate>
                                 Kursy walut pobierane są z <i><Link href="https://currencyapi.com/">currencyapi.com</Link></i>
