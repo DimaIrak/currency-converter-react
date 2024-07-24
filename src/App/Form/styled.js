@@ -77,10 +77,12 @@ export const CleanButton = styled.button`
 
 export const Loading = styled.p`
     color: ${({ theme }) => theme.colors.fadedJade};
+    font-size: x-large;
 `;
 
 export const Failure = styled.p`
     color: ${({ theme }) => theme.colors.crimson};
+    font-size: x-large;
 `;
 
 export const ExchangeDate = styled.p`
