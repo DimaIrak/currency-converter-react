@@ -72,14 +72,14 @@ export const Form = () => {
                 {ratesDate.status === "loading"
                     ? (
                         <Loading>
-                            Nie tak szybko,Lilia🤭 <br/>
-                            Ląduje, najaktualniejsze kursy walut🤑, dla ciebie, złotko🤩
+                            Sekundkę... <br />
+                            Ląduje,aktualne kursy walut🤑,na dzisiaj.
                         </Loading>
                     )
                     : (
                         ratesDate.status === "error" ? (
                             <Failure>
-                                Coś poszło nie tak. <br/>A może brak internetu... <br/>sprawdz, prose
+                                Coś poszło nie tak. <br />A może brak internetu... <br />sprawdz, prose
                             </Failure>
                         ) : (<>
                             <p>
