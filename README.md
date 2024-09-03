@@ -1,5 +1,5 @@
 # Currency-Converter
-![scrinshot of the side](src/images/skrinshot.png)
+![scrinshot of the side](image.png)
 
 ## Demo
 https://dimairak.github.io/currency-converter-react/
