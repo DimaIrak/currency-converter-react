@@ -29,7 +29,7 @@ export const useRatesData = () => {
             }
         };
 
-        setTimeout(fetchRates, 6000);
+        setTimeout(fetchRates, 3000);
     }, []);
 
     return ratesData;
